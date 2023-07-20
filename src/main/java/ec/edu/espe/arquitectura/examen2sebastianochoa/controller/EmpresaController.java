@@ -3,6 +3,8 @@ package ec.edu.espe.arquitectura.examen2sebastianochoa.controller;
 import ec.edu.espe.arquitectura.examen2sebastianochoa.controller.dto.EmpresaRQ;
 import ec.edu.espe.arquitectura.examen2sebastianochoa.service.EmpresaService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,8 +16,8 @@ public class EmpresaController {
     public EmpresaController(EmpresaService empresaService) {
         this.empresaService = empresaService;
     }
-
-    public ResponseEntity<?> crear(EmpresaRQ empresaRQ){
+    @PostMapping
+    public ResponseEntity<?> crear(@RequestBody EmpresaRQ empresaRQ){
         this.empresaService.crearEmpresa(empresaRQ);
         return ResponseEntity.ok().build();
     }
