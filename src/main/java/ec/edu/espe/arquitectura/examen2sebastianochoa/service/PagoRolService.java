@@ -1,6 +1,7 @@
 package ec.edu.espe.arquitectura.examen2sebastianochoa.service;
 
 import ec.edu.espe.arquitectura.examen2sebastianochoa.controller.dto.PagoRolRQ;
+import ec.edu.espe.arquitectura.examen2sebastianochoa.controller.dto.PagoRolRS;
 import ec.edu.espe.arquitectura.examen2sebastianochoa.model.EmpleadoPago;
 import ec.edu.espe.arquitectura.examen2sebastianochoa.model.PagoRol;
 import ec.edu.espe.arquitectura.examen2sebastianochoa.repository.EmpresaRepository;
@@ -38,7 +39,7 @@ public class PagoRolService {
     }
 
 
-    public void validarPagoRol(String mes, String rucEmpresa){
+    public PagoRolRS validarPagoRol(String mes, String rucEmpresa){
         try{
             List<PagoRol> pagoRolList = this.pagoRolRepository.findAllEmployees();
             Integer pagosCounter = 0;
